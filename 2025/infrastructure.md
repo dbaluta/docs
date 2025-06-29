@@ -97,6 +97,13 @@ When the import operation is over, select your VM and then click on the "Power O
 button (i.e. the green arrow head) to start it. If everything went well you'll be
 greeted with the Ubuntu login prompt.
 
+### Potential issues and solutions
+
+1. VirtualBox doesn't list any USB devices when right-clicking the USB icon.
+
+Uninstall VirtualBox using the installer. After doing so, run the installer as
+administrator and re-install.
+
 ## Setting up the infrastructure for Linux-based systems
 
 Since you're already using a Linux-based distribution, you won't necessarily be
