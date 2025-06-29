@@ -76,8 +76,68 @@ button. The machine will have to be powered off for this.**
 
 #### Importing the OVA using VMWare
 
+When opening up VMWare you should be greeted with an interface similar
+with the one shown below:
+
+![VMWare Interface](images/infrastructure/6.png)
+
+To import the OVA you'll have to go to "Player > File > Open" as shown below:
+
+![VMWare Import OVA](images/infrastructure/7.png)
+
+and then navigate through your file system until you find the OVA. After selecting
+the OVA you'll be prompted with the following menu:
+
+![VMWare Import OVA Menu](images/infrastructure/8.png)
+
+in which you'll have to give your VM a name and select the folder in which VMWare
+will store the data associated with your VM. After you're done click on "Import".
+
+When the import operation is over, select your VM and then click on the "Power On"
+button (i.e. the green arrow head) to start it. If everything went well you'll be
+greeted with the Ubuntu login prompt.
+
 ## Setting up the infrastructure for Linux-based systems
+
+Since you're already using a Linux-based distribution, you won't necessarily be
+needing a virtual machine [^2]. Consequently, all that's left for you to do is
+install the packages we'll be using for development and clone the LKSS repositories.
+To install the required packages please run:
+
+```bash
+# required for cloning the repositories
+sudo apt install git
+
+# required for compiling the Linux kernel
+sudo apt install build-essential libncurses-dev bc flex bison libssl-dev libelf-dev gcc-aarch64-linux-gnu
+
+# misc
+sudo apt install minicom
+```
+
+Before cloning the repositories you might want to create a directory in which
+you can keep all of the LKSS-related code. For our VMs, we've chosen to place
+everything under: "/home/student/work/repos". Of course, you are free to place
+them wherever you see fit.
+
+To install the required repositories please run:
+
+```bash
+# linux kernel source
+git clone --depth=1 https://github.com/Linux-Kernel-Summer-School/linux.git
+
+# documentation (optional, in case you want a local copy)
+git clone https://github.com/Linux-Kernel-Summer-School/docs.git
+
+# utilities
+git clone https://github.com/Linux-Kernel-Summer-School/lkss-utils
+```
+
+Additionally, when booting the board, we're going to be needing a filesystem,
+which can be downloaded from here (TODO).
 
 
 [^1]: This might not be free anymore. In case you don't already have this VMM
 or the university doesn't provide free licenses anymore just go with VirtualBox.
+[^2]: If you do wish to use a virtual machine then please follow the steps from
+the "Setting up the infrastructure for Windows-based systems" section.
