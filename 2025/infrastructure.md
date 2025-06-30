@@ -171,6 +171,7 @@ git clone https://github.com/Linux-Kernel-Summer-School/lkss-utils
 Additionally, when booting the board, we're going to be needing a filesystem,
 which can be downloaded from here (TODO).
 
+---
 
 [^1]: This might not be free anymore. In case you don't already have this VMM
 or the university doesn't provide free licenses anymore just go with VirtualBox.
