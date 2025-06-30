@@ -97,12 +97,43 @@ When the import operation is over, select your VM and then click on the "Power O
 button (i.e. the green arrow head) to start it. If everything went well you'll be
 greeted with the Ubuntu login prompt.
 
+#### Setting up VirtualBox for SSH
+
+You may need to transfer files between your host and guest machines or SSH
+into your virtual machine for development purposes. To do this in VirtualBox
+you're going to have to add a port forwarding rule. To do so, select your
+virtual machine and then go to "Settings > Network" as shown below:
+
+![VBox network](images/infrastructure/9.png)
+
+Then, click on the "Port forwarding" button. You should be prompted with the following
+menu:
+
+![VBox network PF](images/infrastructure/10.png)
+
+Click on the green plus sign on the right side and add the following rule:
+
+![VBox PF rule](images/infrastructure/11.png)
+
+Afterwards, click "OK" and start your VM. To SSH into your VM you can use:
+
+```bash
+ssh -p 3022 student@127.0.0.1
+```
+
+To transfer something from your host to your guest:
+
+```bash
+scp -P 3022 MY_AWESOME_FILE.zip student@127.0.0.1:/path/to/whatever/directory
+```
+
 ### Potential issues and solutions
 
 1. VirtualBox doesn't list any USB devices when right-clicking the USB icon.
 
 Uninstall VirtualBox using the installer. After doing so, run the installer as
 administrator and re-install.
+
 
 ## Setting up the infrastructure for Linux-based systems
 
@@ -132,9 +163,6 @@ To install the required repositories please run:
 ```bash
 # linux kernel source
 git clone --depth=1 https://github.com/Linux-Kernel-Summer-School/linux.git
-
-# documentation (optional, in case you want a local copy)
-git clone https://github.com/Linux-Kernel-Summer-School/docs.git
 
 # utilities
 git clone https://github.com/Linux-Kernel-Summer-School/lkss-utils
