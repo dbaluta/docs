@@ -19,10 +19,52 @@ for the day, what students are expected to understand or achieve by the end of t
 
 ## Lab Exercises
 
-### Exercise 1: [Exercise Title]
+> **Note**
+>
+> Before starting this lab, make sure your **exercises repository** is up to date. All lab exercises are
+> located in subdirectories under `drivers/lkss/lab3`.
+>
+>
+> ### If You Already Have the Repository
+>
+> If you are using the virtual machine described in [Infrastructure page](./infrastructure.md) the repo is already
+cloned. 
+>
+> ```bash
+> cd ~/linux  # or navigate to the location where you cloned the repo
+> git pull origin main
+> ```
+>
+> Make sure you are on the correct branch (that is `main` branch).
+>
+> ### If You Do Not Have the Repository Yet
+>
+> If you haven't cloned the repository yet, you can do so with the following commands:
+>
+> ```bash
+> git clone https://github.com/Linux-Kernel-Summer-School/linux.git
+> cd linux
+> ```
+>
+> Navigate to `drivers/lkss/labs/lab3/` lab directory to begin your work.
+>
+> ---
 
-_Goal: Clearly describe the objective of this exercise and what the student is expected to build, test,
-or analyze._
+### Exercise 1: Writing a Simple GPIO Button Driver
+
+In this exercise, you'll explore a basic GPIO button driver that registers an interrupt handler
+when the button is pressed. This example demonstrates how to use GPIO descriptors and platform
+drivers in the Linux kernel.
+
+1. **Understand the Driver Structure**
+   Explore the code under `drivers/lkss/labs/lab3/gpio_button.c`. This driver requests a GPIO line,
+   converts it to an IRQ, and sets up an interrupt handler triggered on a falling edge.
+   Read through `gpio_button.c` and identify the following:
+    - How the GPIO is retrieved using `devm_gpiod_get()`
+    - How the GPIO is mapped to an IRQ using `gpiod_to_irq()`
+    - How the interrupt is requested with `devm_request_irq()`
+    - Where and how the interrupt handler is defined.
+  Pay special attention to the `button_irq_handler()` function. You'll implement functionality in it.
 
 ---
 
