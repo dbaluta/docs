@@ -126,7 +126,8 @@ Once your hardware is ready, we’ll move on to writing the software to control 
 
 Before starting this exercise, please make sure you enable **CONFIG_LKSS_DRIVERS_LAB2_EX3**.
 
-Also, enable the `gpio-led` node in the device tree file `imx93-11x11-frdm.dts` by changing its status from `disabled` to `okay`.
+***IMPORTANT***: Enable the `gpio-led` node in the device tree file `imx93-11x11-frdm.dts` by changing its status from `disabled` to `okay`.
+This file can be found in `~/linux/arch/arm64/boot/dts/freescale/imx93-11x11-frdm.dts`
 
 **Objective**: Develop a character driver (`gpio_led.c`) that controls an LED connected to a GPIO pin. The LED should be turned `on` or `off` based on the values written to the device (0 for off, 1 for on), and on `read()` should report LED state.
 This demonstrates how to use kernel GPIO APIs to interact with hardware and expose control through standard file operations.
