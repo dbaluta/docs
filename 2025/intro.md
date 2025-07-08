@@ -50,6 +50,10 @@ GPIOs.
 
 - You can either use your Linux native installation or a virtual machine. Follow the [Infrastructure Guide](./infrastructure.md).
 
+## Cheatsheet
+
+- To aid you in the development process, we've provided a [Cheatsheet](./cheasheet.md) containing the most commonly used commands.
+
 ---
 
 ##  Goals
