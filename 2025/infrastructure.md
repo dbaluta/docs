@@ -2,9 +2,12 @@
 
 ## Table of contents
 
+- [Introduction](#introduction)
 - [Setting up the infrastructure for Windows-based systems](#setting-up-the-infrastructure-for-windows-based-systems)
 - [Setting up the infrastructure for Linux-based systems](#setting-up-the-infrastructure-for-linux-based-systems)
 - [Downloading the root filesystem](#downloading-the-root-filesystem)
+
+## Introduction
 
 Hello everyone and welcome to the **Linux Kernel Summer School (LKSS)** 2025
 edition! This document shall guide you through the steps required for setting
