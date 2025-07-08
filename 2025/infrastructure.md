@@ -1,5 +1,11 @@
 # LKSS 2025 edition infrastructure guide
 
+## Table of contents
+
+- [Setting up the infrastructure for Windows-based systems](#setting-up-the-infrastructure-for-windows-based-systems)
+- [Setting up the infrastructure for Linux-based systems](#setting-up-the-infrastructure-for-linux-based-systems)
+- [Downloading the root filesystem](#downloading-the-root-filesystem)
+
 Hello everyone and welcome to the **Linux Kernel Summer School (LKSS)** 2025
 edition! This document shall guide you through the steps required for setting
 up the environment required for this year's edition. The setup steps depend on
@@ -168,8 +174,17 @@ git clone --depth=1 https://github.com/Linux-Kernel-Summer-School/linux.git
 git clone https://github.com/Linux-Kernel-Summer-School/lkss-utils
 ```
 
+## Downloading the root filesystem
+
 Additionally, when booting the board, we're going to be needing a filesystem,
-which can be downloaded from here (TODO).
+which can be downloaded from [here](https://github.com/Linux-Kernel-Summer-School/buildroot/releases).
+Its name is `rootfs.ext2`. Please make sure you use the latest release.
+
+It is recommended that you place the `rootfs.ext2` file in `/home/student/work/repos/lkss-utils/2025`
+since the [Cheatsheet](./cheatsheet.md) commands assume you're using the aforementioned path.
+
+**NOTE**: the root filesystem is required for both of the setups (native Linux
+and native Windows)
 
 ---
 
