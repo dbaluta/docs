@@ -29,7 +29,7 @@ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make -j$(nproc)
 
 ## Installing the kernel modules in the rootfs
 
-***IMPORTANT: YOU NEED TO DO THIS EVERY TIME YOU COMPILE THE KERNEL***
+***IMPORTANT***: you need to do this every time you compile the kernel.
 
 ```bash
 # run this inside /home/student/work/repos/lkss-utils/2025. rootfs.ext2 is also placed here
