@@ -39,9 +39,6 @@ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make -j$(nproc)
 ## Booting the board
 
 ```bash
-# run this if you're not using the provided VM. You only need to run this once.
-export PATH=$PATH:$(pwd)
-
 # run this inside /home/student/work/repos/lkss-utils/2025
 ./boot_imx93.sh ~/work/repos/linux/arch/arm64/boot/Image ~/work/repos/linux/arch/arm64/boot/dts/freescale/imx93-11x11-frdm.dtb rootfs.ext2
 ```
