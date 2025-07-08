@@ -54,7 +54,7 @@ GPIOs.
 
 ## Cheatsheet
 
-- To aid you in the development process, we've provided a [Cheatsheet](./cheasheet.md) containing the most commonly used commands.
+- To aid you in the development process, we've provided a [Cheatsheet](./cheatsheet.md) containing the most commonly used commands.
 
 ---
 
