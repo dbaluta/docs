@@ -164,19 +164,22 @@ driver for this game.
     - Retrieve the button GPIOs eg: `gpiod_get(&pdev->dev, "up", GPIOD_IN);`
     - Registering the interrupt handler for each gpio in `snake_request_gpio_irq`.
 
-    Review the userspace application in `drivers/lkss/lab3/ex3/snake.py` and identify the following operations:
+    Review the userspace application, from target, in `lab-tests/lab3/snake.py` and identify the following operations:
     - Game logic `while` loop inside `main` function.
 
 2. **Build and load the driver**
    Compile the module and load it using `modprobe`, or verify if it's already loaded with `lsmod`.
 
-3. **Test the Driver**
+3. **Create the Device Node**
+   Use `mknod /dev/snake c <major> <minor>`, where `<major>`, `<minor>` are the major, minor numbers from `dmesg`.
+
+4. **Test the Driver**
    Press the button and observe the kernel log:
    ```bash
    $ dmesg  | tail -n 20
    ```
 
-4. **Run snake.y app on the board**
+5. **Run snake.py app on the board**
    ```bash
    $ cd lab-tests/lab3
    $ python snake.py
